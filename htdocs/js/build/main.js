@@ -178,38 +178,37 @@ var _mobile2 = _interopRequireDefault(_mobile);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
-  var Garmin = Garmin || {};
-  Garmin.site = Garmin.site || {};
-  var _this = Garmin.site;
+  var Global = Global || {};
   // use  _this.function  if you want to reuse it across modules
-  Garmin.site.mobile = window.matchMedia('( max-width: 720px)').matches;
 
-  var DeviceToggle = new _deviceToggle2.default({
-    section: '.section-wrap',
-    prodInfo: '.prod-info',
-    prodCont: '.section-container',
-    data: vivomoveData,
-    toggle: '.prod-toggle',
-    close: '#close-page',
-    pattern: '.pattern-container',
-    ismobile: Garmin.site.mobile,
-    prodSaying: {
-      selector: '.prod-saying',
-      deviceContainer: '.device-container',
-      sectionTitle: '.section-title'
-    }
-  });
+  Global.mobile = window.matchMedia('( max-width: 720px)').matches;
 
-  var WayView = new _wayView2.default({
-    sections: '.section-wrap'
-  });
+  // let DeviceToggle = new deviceToggle({
+  //   section    : '.section-wrap',
+  //   prodInfo   : '.prod-info',
+  //   prodCont   : '.section-container',
+  //   data       : vivomoveData,
+  //   toggle     : '.prod-toggle',
+  //   close      : '#close-page',
+  //   pattern    : '.pattern-container',
+  //   ismobile   : Garmin.site.mobile,
+  //   prodSaying : {
+  //     selector        : '.prod-saying',
+  //     deviceContainer : '.device-container',
+  //     sectionTitle    : '.section-title'
+  //   }
+  // });
 
-  if (Garmin.site.mobile) {
-    _this.Mobile = new _mobile2.default({
-      breakpoint: '720',
-      sections: '.section-wrap'
-    });
-  }
+  // let WayView = new wayView({
+  //   sections : '.section-wrap'
+  // });
+
+  // if (Garmin.site.mobile){
+  //   _this.Mobile = new mobile({
+  //     breakpoint : '720',
+  //     sections : '.section-wrap'
+  //   });
+  // }
 });
 
 },{"./modules/deviceToggle":3,"./modules/mobile":4,"./modules/wayView":5}],3:[function(require,module,exports){

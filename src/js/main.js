@@ -1,13 +1,14 @@
 import deviceToggle from './modules/deviceToggle';
 import wayView from './modules/wayView';
 import mobile from './modules/mobile';
+import mobile from './modules/sections';
 
 $(document).ready(() => {
   let Global  = Global || {};
   // use  _this.function  if you want to reuse it across modules
 
   Global.mobile =  window.matchMedia( `( max-width: 720px)`).matches;
-
+  let Sections = new sections();
   // let DeviceToggle = new deviceToggle({
   //   section    : '.section-wrap',
   //   prodInfo   : '.prod-info',
