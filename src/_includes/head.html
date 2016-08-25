@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lte 9>         <html class="no-js lte-ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" {% if language %} lang="{{ language }}" {% else %} lang="en" {% endif %}> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>{% if page.title %}{{ page.title }}  | {% endif %}{% if site.name %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{% if page.pageDescription %}{{ page.pageDescription }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+
+  <meta property="og:url" content="https://haaans.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ site.name }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:image" content="{{ site.baseurl }}img/screenshot.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="613" />
+  <meta property="og:image:type" content="image/png" />
+
+  {% include favicon.html %}
+
+  {% if site.environment == "prod" || site.enviroment == "stage" %}
+    <link rel="stylesheet" href="{{ site.baseurl }}css/styles.min.css">
+  {% else %}
+    <link rel="stylesheet" href="{{ site.baseurl }}css/styles.css">
+  {% endif %}
+
+</head>
+{% include typekit.html %}

@@ -1,0 +1,46 @@
+/* ====================
+
+General styles and resets for buttons
+
+======================= */
+
+%material-shadow {
+  box-shadow:0 2px 5px 0 rgba(0,0,0,.26);
+  &:hover {
+    box-shadow:0 4px 8px 0 rgba(0,0,0,.4);
+  }
+}
+
+%material-hover {
+  transform: translate3d(0,0,0);
+  transition:.2s cubic-bezier(0,0,.2,1);
+  transition-property:transform,box-shadow;
+  opacity:.93;
+  @extend %material-shadow;
+  &:hover {
+    transform:translate3d(0,-1px,0);
+    opacity:1;
+  }
+  &:active {
+    transform:translate3d(0,1px,0);
+  }
+}
+
+%icon-after {
+    position: relative;
+    padding-right: 40px;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top:50%;
+        transform:translateY(-50%);
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}
+
+}

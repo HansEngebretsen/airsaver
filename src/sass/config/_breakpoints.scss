@@ -1,0 +1,56 @@
+/* ====================
+
+Breakpoints Mixin
+
+Imported by global.scss, included throughout sass\
+USAGE: In any sass declaration, to include breakpont use:
+    @include bp([breakpoint name]){ }
+
+======================= */
+$breakpoints: (
+
+  // Bootstrap breakpoints
+  'screen-xs'      : ( min-width: 480px ),
+  'screen-sm'      : ( min-width: 768px ),
+  'screen-ms'      : ( min-width: 860px ),
+  'screen-md'      : ( min-width: 992px ),
+  'max-screen-md'  : ( max-width: 992px ),
+  'screen-lg'      : ( min-width: 1200px ),
+
+
+  // Mobile, Phablet, Tablet, Desktop, TV
+  'mobile-s'      : ( min-width: 360px ),
+  'mobile-m'      : ( min-width: 520px ),
+  'mobile-l'      : ( min-width: 620px ),
+
+  // Tablet, Phablet, Desktop, TV
+  'tablet-s'      : ( min-width: 737px ),
+  'tablet-m'      : ( min-width: 900px ),
+  'tablet-l'      : ( min-width: 1000px ),
+
+  // Desktop, TV
+  'desktop-s'     : ( min-width: 1023px ),
+  'desktop-l'     : ( min-width: 1224px ),
+
+  // TV
+  'tv-s'          : ( min-width: 1350px ),
+  'tv-m'          : ( min-width: 1440px ),
+  'tv-l'          : ( min-width: 1824px )
+
+);
+
+@mixin breakpoint($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
