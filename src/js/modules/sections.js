@@ -24,97 +24,97 @@ export default class {
 
 
 
-// Old stuff below
+// // Old stuff below
 
 
 
-var template, app;
+// var template, app;
 
-template = {
-  precompile: function precompile () {
-    var index,
-        templates,
-        templateCount;
+// template = {
+//   precompile: function precompile () {
+//     var index,
+//         templates,
+//         templateCount;
 
-    if ( !window.templates ) window.templates = {};
+//     if ( !window.templates ) window.templates = {};
 
-    templates = document.querySelectorAll( 'template' );
+//     templates = document.querySelectorAll( 'template' );
 
-    for ( index = 0, templateCount = templates.length; index < templateCount; index++ ) {
-      var template;
+//     for ( index = 0, templateCount = templates.length; index < templateCount; index++ ) {
+//       var template;
 
-      template = templates[index];
+//       template = templates[index];
 
-      window.templates[template.id] = Handlebars.compile(template.innerHTML);
-    };
-  },
+//       window.templates[template.id] = Handlebars.compile(template.innerHTML);
+//     };
+//   },
 
-  render: function render ( templateName, content, target, replace ) {
-    var renderedTemplate, target;
+//   render: function render ( templateName, content, target, replace ) {
+//     var renderedTemplate, target;
 
-    target = document.querySelector( target );
-    renderedTemplate = templates[templateName]( content );
+//     target = document.querySelector( target );
+//     renderedTemplate = templates[templateName]( content );
 
-    if ( typeof replace !== 'undefined' && replace ) {
-      target.innerHTML = renderedTemplate;
-    } else {
-      target.innerHTML = target.innerHTML + renderedTemplate;
-    };
-    load.toggleBody();
-    load.toggleForm();
-  }
-};
-load = {
-  toggleBody: function toggleBody(){
-    var card = $('.card');
-    var ham = new Hammer(card[0]);
-    ham.on("tap", function(e){
-       e.preventDefault();
-      console.log('tapped');
-     $(e.currentTarget).toggleClass('active');
-      return;
-     });
+//     if ( typeof replace !== 'undefined' && replace ) {
+//       target.innerHTML = renderedTemplate;
+//     } else {
+//       target.innerHTML = target.innerHTML + renderedTemplate;
+//     };
+//     load.toggleBody();
+//     load.toggleForm();
+//   }
+// };
+// load = {
+//   toggleBody: function toggleBody(){
+//     var card = $('.card');
+//     var ham = new Hammer(card[0]);
+//     ham.on("tap", function(e){
+//        e.preventDefault();
+//       console.log('tapped');
+//      $(e.currentTarget).toggleClass('active');
+//       return;
+//      });
 
-     card.on("click", function(e){
-      e.preventDefault();
-        console.log('clicked');
-      $(this).toggleClass('active');
-    });
-  },
-  toggleForm: function toggleForm() {
-    $('#addbtn').click(function(e){
-      e.preventDefault();
-      $('#form').toggleClass('active');
-    });
-  }
-};
-form = {
-  onSubmit: function onSubmit(){
-    console.log('constructing');
-  },
-  addSubroute: function addSubroute(){
-    $('#addroute').click(function(e){
-      e.preventDefault();
-      $('#subroute').clone().insertAfter('#subroute');
-    })
-  }
-}
+//      card.on("click", function(e){
+//       e.preventDefault();
+//         console.log('clicked');
+//       $(this).toggleClass('active');
+//     });
+//   },
+//   toggleForm: function toggleForm() {
+//     $('#addbtn').click(function(e){
+//       e.preventDefault();
+//       $('#form').toggleClass('active');
+//     });
+//   }
+// };
+// form = {
+//   onSubmit: function onSubmit(){
+//     console.log('constructing');
+//   },
+//   addSubroute: function addSubroute(){
+//     $('#addroute').click(function(e){
+//       e.preventDefault();
+//       $('#subroute').clone().insertAfter('#subroute');
+//     })
+//   }
+// }
 
 
-app = {
-  init: function () {
-    template.precompile();
-    form.onSubmit();
-    form.addSubroute();
+// app = {
+//   init: function () {
+//     template.precompile();
+//     form.onSubmit();
+//     form.addSubroute();
 
-    $.ajax({
-      url: '//codepen.io/hans/pen/WxqOyX.js',
-      complete: function ( xhr ) {
-        var response = jQuery.parseJSON(xhr.responseText);
-        template.render('mainTemplate', response, '.container', true );
-      }
-    });
-  }
-};
+//     $.ajax({
+//       url: '//codepen.io/hans/pen/WxqOyX.js',
+//       complete: function ( xhr ) {
+//         var response = jQuery.parseJSON(xhr.responseText);
+//         template.render('mainTemplate', response, '.container', true );
+//       }
+//     });
+//   }
+// };
 
-$( document ).ready( app.init );
+// $( document ).ready( app.init );

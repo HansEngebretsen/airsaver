@@ -69,6 +69,7 @@ title: airsaver
 </div>
 <div class="container"></div>
  <template id="mainTemplate">
+ {% raw %}
    {{#each posts}}
  <article class="card">
     <header>
@@ -91,7 +92,6 @@ title: airsaver
       </section>
     </header>
     <div class="details">
-
        {{#each routes}}
       <div class="route">
         <span class="start">{{start.place}} <br><span class="icons-wrap"><span class="time">{{start.time}}</span><br><span class="cali">{{start.day}}</span></span></span>
@@ -102,4 +102,5 @@ title: airsaver
     </div>
   </article>
   {{/each}}
+  {% endraw %}
   </template>
