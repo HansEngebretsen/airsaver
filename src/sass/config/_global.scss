@@ -4,6 +4,11 @@ Imports for config elements
 
 ======================= */
 
+* {
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+}
+
 @import "mixins";
 @import "colors";
 @import "breakpoints";

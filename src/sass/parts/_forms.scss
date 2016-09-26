@@ -1,0 +1,134 @@
+.form-container {
+  display: block;
+}
+
+.daysout {
+  max-width: 300px;
+}
+
+fieldset {
+  border: 1px dotted #ccc;
+  outline: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: block;
+
+  &.subroute:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+}
+
+form {
+  padding: 2em;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+  border-radius: 0.25em;
+  max-width: 100%;
+  text-align: right;
+}
+
+.subroute {
+  margin-left: 50px;
+}
+
+.trip-form {
+  h1 {
+    position: relative;
+  }
+}
+
+input, select {
+  padding: .5em 1em;
+  font-size: 0.875em;
+  font-family: inherit;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-width: 1px 1px 1px 0;
+  border-radius: 0;
+  flex: 1;
+  -webkit-appearance: none;
+  position: relative;
+  width: 50%;
+}
+
+select {
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: 95% center;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjFweCIgaGVpZ2h0PSI1M3B4IiB2aWV3Qm94PSIwIDAgNjEgNTMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+YXJyb3ctZG93bjwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz48L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9ImlQYWQtUG9ydHJhaXQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMDkuMDAwMDAwLCAtNjE3LjAwMDAwMCkiIGZpbGw9IiM0QjRCNEIiPiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJhcnJvdy1kb3duIiBwb2ludHM9IjMwOSA2MTcgMzcwLjAwMjA0OSA2MTcgMzM5LjUwMTAyNCA2NzAiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+}
+
+select:focus {
+  outline: none;
+}
+
+input:focus {
+  background-color: rgba(#f4f4f4, 0.65);
+  border-bottom-color: black;
+  outline: none;
+}
+
+.form-field {
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.form-field label {
+  width: 100px;
+  padding: 1em;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.75em;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  line-height: 1;
+}
+
+.add-route, button {
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: .75em;
+  padding: .75em 1.5em;
+  position: relative;
+}
+
+.form-field input,
+.form-field select {
+  flex-grow: 1;
+}
+
+.form-field label {
+  border-radius: 0.25em 0 0 0.25em;
+}
+
+.input-right input,
+.input-right select,
+.multi-input input:last-child,
+.multi-input select:last-child {
+  border-radius: 0 0.25em 0.25em 0;
+}
+
+.dob-select {
+  flex-basis: 0.2vh;
+}
+
+.submit-field {
+  flex-direction: row-reverse;
+}
+
+input[type="submit"] {
+  flex: 0 1 100%;
+  margin-top: 20px;
+  padding: 0.8em;
+  font-size: 1.2rem;
+  font-family: inherit;
+  background: none;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: $green;
+}
+
+input[type="submit"]:hover {
+  color: #fff;
+}
