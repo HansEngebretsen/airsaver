@@ -62,18 +62,9 @@
 
        browserify: {
          all: {
-           options: {
-             debug: true,
-             alias: {
-               "babel-polyfill": './node_modules/babel-polyfill/dist/polyfill.js'
-             },
-             transform: [
-              [babelify, {
-                sourceMaps: true,
-                presets: babelPresets
-              }]
-            ]
-           },
+          options: {
+           transform: [['babelify', {presets: ['es2015', 'react', 'stage-0']}]]
+          },
            expand: true,
            cwd:  "<%= options.src.js %>/",
            src:  ["*.js", "!libs/*"],

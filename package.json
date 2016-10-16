@@ -1,5 +1,5 @@
 {
-  "name": "vivomove-campaign",
+  "name": "airsaver",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -11,12 +11,16 @@
     "grunt-http": "^2.0.1",
     "load-grunt-tasks": "^3.5.0",
     "babel-polyfill": "^6.9.1",
+    "react": "latest",
+    "react-dom": "latest",
     "babel-preset-es2015": "latest",
     "babel-preset-stage-0": "latest",
     "babelify": "latest",
     "grunt-browserify": "latest"
   },
   "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "core-js": "^2.4.1",
     "grunt-browser-sync": "^2.1.3",
     "grunt-sass": "^1.1.0"
   }
